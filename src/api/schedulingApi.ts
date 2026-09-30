@@ -24,7 +24,10 @@ export const appointmentsApi = {
     }, {}));
   },
   create: (input: { professionalId: string; locationId: string; specialtyId: string; date: string; startTime: string; reason?: string }) => request<Appointment>('/appointments', { method: 'POST', body: JSON.stringify(input) }),
+<<<<<<< HEAD
   mine: () => request<Appointment[]>('/appointments/mine'),
+=======
+>>>>>>> 2eeee42f88c738f735a1b16f81a0e48f53cf0ee0
   pendingSpecialized: () => request<Appointment[]>('/admin/appointments/pending-specialized'),
   decide: (id: string, decision: 'APPROVE' | 'REJECT', reason?: string) => request<Appointment>(`/admin/appointments/${id}/decision`, { method: 'POST', body: JSON.stringify({ decision, reason }) }),
 };
